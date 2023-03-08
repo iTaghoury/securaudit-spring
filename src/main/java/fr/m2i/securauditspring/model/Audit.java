@@ -16,22 +16,22 @@ public class Audit {
     private int coutJour;
     @Column(name = "idIndustrie")
     private int idIndustrie;
-    @Column(name = "IdAuditeur")
-    private int IdAuditeur;
-    public Audit(int idAudit, Date dateAudit, int dureeAudit, int coutJour, int idIndustrie, int IdAuditeur) {
+    @Column(name = "idAuditeur")
+    private int idAuditeur;
+    public Audit(int idAudit, Date dateAudit, int dureeAudit, int coutJour, int idIndustrie, int idAuditeur) {
         this.idAudit = idAudit;
         this.dateAudit = dateAudit;
         this.dureeAudit = dureeAudit;
         this.coutJour = coutJour;
         this.idIndustrie = idIndustrie;
-        this.IdAuditeur = IdAuditeur;
+        this.idAuditeur = idAuditeur;
     }
-    public Audit( Date dateAudit, int dureeAudit, int coutJour, int idIndustrie, int IdAuditeur) {
+    public Audit( Date dateAudit, int dureeAudit, int coutJour, int idIndustrie, int idAuditeur) {
         this.dateAudit = dateAudit;
         this.dureeAudit = dureeAudit;
         this.coutJour = coutJour;
         this.idIndustrie = idIndustrie;
-        this.IdAuditeur = IdAuditeur;
+        this.idAuditeur = idAuditeur;
     }
     public Audit() {}    public int getIdAudit() {
         return idAudit;
@@ -63,10 +63,10 @@ public class Audit {
     public void setIdIndustrie(int idIndustrie) {
         this.idIndustrie = idIndustrie;
     }
-    public  int getIdAuditeur() {
-        return IdAuditeur;
+    public  int getidAuditeur() {
+        return idAuditeur;
     }
-    public void setIdAuditeur(int idAuditeur) {
-        IdAuditeur = idAuditeur;
+    public void setidAuditeur(int idAuditeur) {
+        idAuditeur = idAuditeur;
     }
 }
