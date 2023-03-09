@@ -3,11 +3,14 @@ package fr.m2i.securauditspring.model;
 import jakarta.persistence.*;
 
 @Entity
-
+@Table(name = "categorie")
 public class Categorie {
     @Id
+    @Column(name = "idCategorie")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int idCategorie;
+
+    @Column(name = "libelle")
     private String libelle;
 
     //region CONSTRUCTORS
@@ -18,17 +21,17 @@ public class Categorie {
         this.libelle = libelle;
     }
 
-    public Categorie(int id, String libelle) {
+    public Categorie(int idCategorie, String libelle) {
         this.libelle = libelle;
-        this.id = id;
+        this.idCategorie = idCategorie;
     }
 
-    public int getId() {
-        return id;
+    public long getidCategorie() {
+        return idCategorie;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setidCategorie(int idCategorie) {
+        this.idCategorie = idCategorie;
     }
 
     public String getLibelle() {
@@ -42,7 +45,7 @@ public class Categorie {
     @Override
     public String toString() {
         return "Categorie{" +
-                "id=" + id +
+                "idCategorie=" + idCategorie +
                 ", libelle='" + libelle + '\'' +
                 '}';
     }
