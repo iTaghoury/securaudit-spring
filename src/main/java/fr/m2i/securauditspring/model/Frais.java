@@ -9,15 +9,21 @@ import jakarta.persistence.*;
 @Table(name = "frais")
 public class Frais {
     @Id
+    @Column(name = "idFrais")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idFrais;
 
-    private Date dateFrais;
-    private boolean estRembourse;
-    private int montant;
-    private int idAudit;
-    private int idCategorie;
 
+    @Column(name = "dateFrais")
+    private Date dateFrais;
+    @Column(name = "estRembourse")
+    private boolean estRembourse;
+    @Column(name = "montant")
+    private int montant;
+    @Column(name = "idAudit")
+    private int idAudit;
+    @Column(name = "idCategorie")
+    private int idCategorie;
     public int getIdFrais() {
         return idFrais;
     }
