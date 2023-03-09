@@ -3,12 +3,11 @@ package fr.m2i.securauditspring.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Categorie")
+
 public class Categorie {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column(name = "libelle")
     private String libelle;
 
     //region CONSTRUCTORS

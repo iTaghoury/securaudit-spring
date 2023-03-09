@@ -3,15 +3,12 @@ package fr.m2i.securauditspring.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "industrie")
 public class Industrie {
 
     @Id
     @GeneratedValue
     private int idIndustrie;
-    @Column(name = "siret")
     private String siret;
-    @Column(name = "raisonSociale")
     private String raisonSociale;
 
 
@@ -48,5 +45,4 @@ public class Industrie {
         this.raisonSociale = raisonSociale;
     }
     //endregion
-
 }

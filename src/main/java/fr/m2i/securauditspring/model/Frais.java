@@ -6,23 +6,16 @@ import java.sql.Date;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "frais")
 public class Frais {
     @Id
-    @Column(name = "idFrais")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idFrais;
 
 
-    @Column(name = "dateFrais")
     private Date dateFrais;
-    @Column(name = "estRembourse")
     private boolean estRembourse;
-    @Column(name = "montant")
-    private int montant;
-    @Column(name = "idAudit")
+    private float montant;
     private int idAudit;
-    @Column(name = "idCategorie")
     private int idCategorie;
     public int getIdFrais() {
         return idFrais;
@@ -48,11 +41,11 @@ public class Frais {
         this.estRembourse = estRembourse;
     }
 
-    public int getMontant() {
+    public float getMontant() {
         return montant;
     }
 
-    public void setMontant(int montant) {
+    public void setMontant(float montant) {
         this.montant = montant;
     }
 
@@ -72,7 +65,7 @@ public class Frais {
         this.idCategorie = idCategorie;
     }
 
-    public Frais(int idFrais, Date dateFrais, boolean estRembourse, int montant, int idAudit, int idCategorie) {
+    public Frais(int idFrais, Date dateFrais, boolean estRembourse, float montant, int idAudit, int idCategorie) {
         this.idFrais = idFrais;
         this.dateFrais = dateFrais;
         this.estRembourse = estRembourse;
@@ -81,7 +74,7 @@ public class Frais {
         this.idCategorie = idCategorie;
     }
 
-    public Frais(Date dateFrais, boolean estRembourse, int montant, int idAudit, int idCategorie) {
+    public Frais(Date dateFrais, boolean estRembourse, float montant, int idAudit, int idCategorie) {
         this.idFrais = idFrais;
         this.dateFrais = dateFrais;
         this.estRembourse = estRembourse;
