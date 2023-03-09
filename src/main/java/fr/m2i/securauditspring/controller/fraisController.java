@@ -1,5 +1,6 @@
 package fr.m2i.securauditspring.controller;
 
+import fr.m2i.securauditspring.Exception.ResourceNotFoundException;
 import fr.m2i.securauditspring.model.Frais;
 import fr.m2i.securauditspring.repositories.FraisRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +29,14 @@ public class fraisController {
     }
 
     @GetMapping("/select/{id}")
-    public ResponseEntity<Frais> getFraisById(@PathVariable("id") Integer id) {
+    public ResponseEntity<Frais> getFraisById(@PathVariable("id") Integer id)  {
         Optional<Frais> FraisData = fraisRepository.findById(id);
 
         if (FraisData.isPresent()) {
             return new ResponseEntity<>(FraisData.get(), HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            // return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            throw new ResourceNotFoundException(" Frais with id : " + id + " not found ");
         }
     }
 
@@ -64,7 +66,8 @@ public class fraisController {
 
             return new ResponseEntity<>(fraisRepository.save(_Frais), HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            // return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            throw new ResourceNotFoundException(" Frais with id : " + id + " not found ");
         }
     }
 
