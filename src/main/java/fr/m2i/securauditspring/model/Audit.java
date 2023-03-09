@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "audit")
 public class Audit {
     @Id
+    @Column(name = "idAudit")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idAudit;
     @Column(name = "dateAudit")
@@ -26,14 +27,18 @@ public class Audit {
         this.idIndustrie = idIndustrie;
         this.idAuditeur = idAuditeur;
     }
-    public Audit( Date dateAudit, int dureeAudit, int coutJour, int idIndustrie, int idAuditeur) {
+    public Audit( int coutJour,Date dateAudit, int dureeAudit,int idAuditeur, int idIndustrie ) {
         this.dateAudit = dateAudit;
         this.dureeAudit = dureeAudit;
         this.coutJour = coutJour;
-        this.idIndustrie = idIndustrie;
         this.idAuditeur = idAuditeur;
+        this.idIndustrie = idIndustrie;
     }
-    public Audit() {}    public int getIdAudit() {
+    public Audit() {}
+
+
+
+    public int getIdAudit() {
         return idAudit;
     }
     public void setIdAudit(int idAudit) {
