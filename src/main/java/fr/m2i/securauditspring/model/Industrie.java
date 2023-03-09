@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class Industrie {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idIndustrie;
     private String siret;
     private String raisonSociale;
