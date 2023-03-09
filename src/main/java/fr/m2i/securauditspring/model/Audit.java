@@ -3,21 +3,20 @@ package fr.m2i.securauditspring.model;
 import java.sql.Date;
 import jakarta.persistence.*;
 @Entity
-@Table(name = "audit")
 public class Audit {
     @Id
     @Column(name = "idAudit")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idAudit;
-    @Column(name = "dateAudit")
+
     private Date dateAudit;
-    @Column(name = "dureeAudit")
+
     private int dureeAudit;
-    @Column(name = "coutJour")
+
     private int coutJour;
-    @Column(name = "idIndustrie")
+
     private int idIndustrie;
-    @Column(name = "idAuditeur")
+
     private int idAuditeur;
     public Audit(int idAudit, Date dateAudit, int dureeAudit, int coutJour, int idIndustrie, int idAuditeur) {
         this.idAudit = idAudit;

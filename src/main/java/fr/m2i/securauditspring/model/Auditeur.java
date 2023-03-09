@@ -3,19 +3,13 @@ package fr.m2i.securauditspring.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Auditeur")
 public class Auditeur {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idAuditeur;
 
-    @Column(name = "civilite")
     private String civilite;
-
-    @Column(name = "nom")
     private String nom;
-
-    @Column(name = "prenom")
     private String prenom;
 
     public Auditeur(int idAuditeur, String civilite, String nom, String prenom) {
